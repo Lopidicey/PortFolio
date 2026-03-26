@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Pelouse — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ───────── CURSOR ───────── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ───────── NAVBAR ───────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">VP<span class="accent">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero"     class="nav-link" data-label="00">Accueil</a></li>
+      <li><a href="#about"    class="nav-link" data-label="01">À propos</a></li>
+      <li><a href="#projects" class="nav-link" data-label="02">Projets</a></li>
+      <li><a href="#skills"   class="nav-link" data-label="03">Compétences</a></li>
+      <li><a href="#contact"  class="nav-link" data-label="04">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero"     class="mobile-link">Accueil</a></li>
+      <li><a href="#about"    class="mobile-link">À propos</a></li>
+      <li><a href="#projects" class="mobile-link">Projets</a></li>
+      <li><a href="#skills"   class="mobile-link">Compétences</a></li>
+      <li><a href="#contact"  class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ───────── HERO ───────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas id="noiseCanvas"></canvas>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up" style="--delay:.1s">Étudiant en informatique</p>
+      <h1 class="hero-title">
+        <span class="reveal-up" style="--delay:.2s">Victor</span>
+        <span class="reveal-up accent-line" style="--delay:.35s">Pelouse</span>
+      </h1>
+      <p class="hero-subtitle reveal-up" style="--delay:.5s">
+        En quête de savoir dans l'océan du numérique —<br />toujours prêt à relever de nouveaux défis.
+      </p>
+      <div class="hero-cta reveal-up" style="--delay:.65s">
+        <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+        <a href="#contact"  class="btn btn-ghost">Me contacter</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ───────── ABOUT ───────── -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">À propos</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            Passionné par l'art de transformer des lignes de code en expériences concrètes.
+          </p>
+          <p>
+            Étudiant en informatique, je m'intéresse autant aux fondements théoriques qu'à la pratique :
+            algorithmes, développement web, systèmes bas niveau. J'aime construire des projets qui ont
+            du sens, de l'architecture jusqu'à l'interface.
+          </p>
+          <p>
+            En dehors du code, je lis des papiers de recherche, contribue à des projets open-source
+            et cherche constamment à améliorer ma façon de penser les problèmes.
+          </p>
+          <a href="#contact" class="btn btn-outline mt-lg">Travaillons ensemble</a>
+        </div>
+        <div class="about-card">
+          <div class="about-card-inner">
+            <div class="about-stat">
+              <span class="stat-num" data-target="2">0</span>
+              <span class="stat-label">ans d'études</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-num" data-target="2">0</span>
+              <span class="stat-label">projets réalisés</span>
+            </div>
+            <div class="about-stat">
+              <span class="stat-num" data-target="4">0</span>
+              <span class="stat-label">langages appris</span>
+            </div>
+            <div class="about-badges">
+              <span class="badge">Open Source</span>
+              <span class="badge">Full-Stack</span>
+              <span class="badge">Algo & Data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── PROJECTS ───────── -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Projets</h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card project-card--featured">
+          <div class="project-card-bg" style="--accent:#00ff88"></div>
+          <div class="project-card-content">
+            <div class="project-top">
+              <span class="project-tag">Terminal & Hardware</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3 class="project-title">Serveur personnel</h3>
+            <p class="project-desc">Serveur d'hébergement web, logiciel, gaming avec agents de gestion de services personalisés ( tunnels de connection, gestion des ressources etc... )</p>
+            <div class="project-stack">
+              <span>LinuxMint</span><span>Bash</span><span>SSH</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-bg" style="--accent:#ff0077"></div>
+          <div class="project-card-content">
+            <div class="project-top">
+              <span class="project-tag">Web & BDD</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 class="project-title">Cubes.</h3>
+            <p class="project-desc">Petite interface interractive pour BDD dynamique avec prise en compte des informations utilisateur.</p>
+            <div class="project-stack">
+              <span>NextJS</span><span>TypeScript</span><span>SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Lopidicey/Cubes" class="project-link">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── SKILLS ───────── -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Compétences</h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skills-group">
+          <h3 class="skills-group-title">Langages</h3>
+          <ul class="skills-list">
+            <li class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Rust</span><div class="skill-bar"><div class="skill-fill" data-width="65%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">C / C++</span><div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div></li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <h3 class="skills-group-title">Frameworks & Outils</h3>
+          <ul class="skills-list">
+            <li class="skill-item"><span class="skill-name">React</span><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Node.js</span><div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div></li>
+            <li class="skill-item"><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-fill" data-width="82%"></div></div></li>
+          </ul>
+        </div>
+        <div class="skills-tags-col">
+          <h3 class="skills-group-title">Domaines</h3>
+          <div class="skills-tags">
+            <span>Algorithmes</span>
+            <span>Structures de données</span>
+            <span>Développement web</span>
+            <span>Systèmes</span>
+            <span>Bases de données</span>
+            <span>API REST</span>
+            <span>Open Source</span>
+            <span>CI/CD</span>
+            <span>Sécurité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── CONTACT ───────── -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-text">
+          <p class="contact-lead">Une idée de projet ? Un stage ? Une simple question ?</p>
+          <p>Je suis disponible pour des collaborations, des stages ou juste échanger. N'hésitez pas à me contacter.</p>
+          <div class="contact-socials">
+            <a href="mailto:victor.pelouse@email.com" class="social-link">
+              <span class="social-icon">✉</span> victorpelouse.pro@gmail.com
+            </a>
+            <a href="https://github.com/Lopidicey" target="_blank" class="social-link">
+              <span class="social-icon">⌥</span> GitHub
+            </a>
+            <a href="#" target="_blank" class="social-link">
+              <span class="social-icon">◈</span> Télécharger mon CV
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" placeholder="John Doe" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="votremail@gmail.com" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Écrivez-moi . . ."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer →</button>
+          <p class="form-feedback" id="formFeedback"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">VP<span class="accent">.</span></span>
+      <span class="footer-copy">© 2025 Victor Pelouse — Fait avec ☕ & curiosité</span>
+      <a href="#hero" class="footer-top">↑ Haut</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
