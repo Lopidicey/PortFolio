@@ -239,45 +239,38 @@ function initNoise() {
 
 
 /* ─── 8. CONTACT FORM ─── */
-function initContactForm() {
-  const form     = document.getElementById('contactForm');
-  const feedback = document.getElementById('formFeedback');
-  if (!form) return;
+document.getElementById('contactForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('button[type="submit"]');
+  const fb   = document.getElementById('formFeedback');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
+  btn.textContent = 'Envoi…';
+  btn.disabled = true;
 
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
 
-    if (!name || !email || !message) {
-      feedback.textContent = '⚠ Merci de remplir tous les champs.';
-      feedback.style.color = 'var(--accent-2)';
-      return;
-    }
-
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRe.test(email)) {
-      feedback.textContent = '⚠ Adresse email invalide.';
-      feedback.style.color = 'var(--accent-2)';
-      return;
-    }
-
-    // Simulate send
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Envoi en cours…';
-    btn.disabled = true;
-
-    setTimeout(() => {
-      feedback.textContent = '✓ Message envoyé — je vous répondrai rapidement !';
-      feedback.style.color = 'var(--accent)';
+    if (res.ok) {
+      fb.textContent = '✓ Message envoyé — je te réponds rapidement !';
+      fb.style.color = 'var(--accent)';
       form.reset();
-      btn.textContent = 'Envoyer →';
-      btn.disabled = false;
-    }, 1200);
-  });
-}
+    } else {
+      fb.textContent = '⚠ Une erreur est survenue, réessaie.';
+      fb.style.color = 'var(--accent-2)';
+    }
+  } catch {
+    fb.textContent = '⚠ Pas de connexion, réessaie plus tard.';
+    fb.style.color = 'var(--accent-2)';
+  }
+
+  btn.textContent = 'Envoyer →';
+  btn.disabled = false;
+});
 
 
 /* ─── 9. INIT ─── */
@@ -289,5 +282,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initSkillBars();
   initNoise();
-  initContactForm();
 });
